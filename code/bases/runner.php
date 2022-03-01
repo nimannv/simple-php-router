@@ -1,5 +1,6 @@
 <?php
-
+require_once "app/middleware.php";
+require_once "app/functionality.php";
 /**
  * Singleton
  */
@@ -20,36 +21,32 @@ class Runner {
         return self::$instance;
     }
 
-    //   addMidleware
     public function addMidleware($new_middleware){
         self::$middleware_list = array_merge(self::$middleware_list ,$new_middleware);
         return true;
     }
 
-    //   addRouteVar
     public function addRouteVar($key, $val){
         self::$RouteVar[$key] = $val;
     }
 
-    //   404
     public function notFound(){
         echo '404';
         exit();
     }
 
-    //   setFunction
     public function setFunction($function){
         self::$last_function = $function;
     }
 
-    //   processRequest
     public function processRequest(){
-        echo '<br>middleware<br>';
-        var_dump(self::$middleware_list);
-        echo '<br>RouteVar<br>';
-        var_dump(self::$RouteVar);
-        echo '<br>last_function<br>';
-        var_dump(self::$last_function);
+        foreach(self::$middleware_list as $middleware){
+            $middleware(self::$RouteVar);
+        }
+
+        $function_name = self::$last_function;
+        $function_name(self::$RouteVar);
+
         exit();
     }
 }

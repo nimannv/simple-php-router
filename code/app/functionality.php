@@ -1,6 +1,9 @@
 <?php
 
-
-function show_name_page(){
-    //code
+function show_main_page($url_var){
+    echo "this is function show_main_page \n";
+}
+function function_name3($url_var){
+    echo "this is function function_name3 \n";
+    var_dump($url_var);
 }
