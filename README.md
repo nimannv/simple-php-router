@@ -10,7 +10,7 @@ I know there are a lot of great frameworks to use in various languages. (laravel
 
 ### How to Use:
 1. Write your site tree on the **/code/router.json** file 
-2. Write your functionalities on the **/code/app** directory on the **fuctionality.php** and the **middleware.php** .
+2. Write your functions on the **/code/app** directory on the **fuctionality.php** and the **middleware.php** .
 3. run it!
 
 ### How to Run:
