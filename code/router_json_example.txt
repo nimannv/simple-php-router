@@ -1,16 +1,12 @@
 [
     {
-        // step ID
-        "id":0,
 
-        // step's parent ID
-        "parent": 0,
-
-	// is it constant string or variable?
+        // is it constant string or variable?
         "type": "var or const",
 
-	// depends on type, if its a variable, then the name consider as the variable name
-	// else name is the constant string wihich should compare with URL
+        // depends on type, if its a variable, then the name consider as the variable name
+
+        // else name is the constant string wihich should compare with URL
         "name": ''
 
         //route middleware
@@ -20,8 +16,12 @@
         ],
 
         // route function
-        // if it's be null or false, it means this route is not end able and URL cant end here
+        // whether it's null or false, it means this route is not end able and URL cant end here
         "function" : "function_name",
+        
+        //list of childrens route
+        "children":[]
+
     },
 
 

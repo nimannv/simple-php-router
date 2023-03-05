@@ -32,16 +32,12 @@ class Router {
     $child_list = array();
     $var_step = NULL;
 
-    foreach(self::$routers as $route){
-
-      if($route->parrent == $current_step->id){
-
-        if($next_path_name == $route->name && $route->type == 'const'){
-          return $route;
-        }
-        elseif($route->type == 'var'){
-          $var_step = $route;
-        }
+    foreach($current_step->children as $child){
+      if($next_path_name == $child->name && $child->type == 'const'){
+        return $child;
+      }
+      elseif($child->type == 'var'){
+        $var_step = $child;
       }
     }
     

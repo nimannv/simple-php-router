@@ -1,44 +1,42 @@
 [
     {
-        "id":0,
-        "parrent": 0,
+        "name": "root" ,
         "type": "const",
-        "name": null,
-        "middleware" : [
+        "middleware": [
             "m1",
             "m2"
         ],
-        "function" : "show_main_page"
-    },
-    {
-        "id":1,
-        "parrent": 0,
-        "type": "const",
-        "name": "r2",
-        "middleware" : [
-            "m21",
-            "m22"
-        ],
-        "function" : null
-    },
-    {
-        "id":2,
-        "parrent": 1,
-        "type": "var",
-        "name": "r3",
-        "middleware" : [
-            "m31",
-            "m32"
-        ],
-        "function" : null
-    },
-    {
-        "id":3,
-        "parrent": 2,
-        "type": "const",
-        "name": "info",
-        "middleware" : [
-        ],
-        "function" : "function_name3"
+        "function": "show_main_page",
+        "children": [
+            {
+                "name": "r2",
+                "type": "const",
+                "middleware" : [
+                    "m21",
+                    "m22"
+                ],
+                "function" : null,
+                "children" : [
+                    {
+                        "name":"r3",
+                        "type": "var",
+                        "middleware" : [
+                            "m31",
+                            "m32"
+                        ],
+                        "function" : "var_func",
+                        "children" : [
+                            {
+                                "name": "info",
+                                "type": "const",
+                                "middleware" : [],
+                                "function": "function_name3",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]
